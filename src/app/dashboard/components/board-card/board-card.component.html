@@ -1,0 +1,23 @@
+<mat-card class="board-card">
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Board Card Menu"
+    class="menu"
+  >
+    <mat-icon class="dots">more_horiz</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onEditBoard()">
+      <mat-icon>edit</mat-icon>
+      <span>{{ "BOARD_CARD.EDIT_BUTTON" | translate }}</span>
+    </button>
+    <button mat-menu-item (click)="onDeleteBoard()">
+      <mat-icon>delete</mat-icon>
+      <span>{{ "BOARD_CARD.DELETE_BUTTON" | translate }}</span>
+    </button>
+  </mat-menu>
+  <mat-card-content>
+    <h2 class="mat-title">{{ board.title ? board.title : "Card Name" }}</h2>
+  </mat-card-content>
+</mat-card>

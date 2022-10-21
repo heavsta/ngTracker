@@ -1,0 +1,61 @@
+.mat-toolbar {
+  position: relative;
+  min-height: 100% !important;
+  height: 100% !important;
+  z-index: 5;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  margin: 0 0.5em;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 37px;
+    width: 43px;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.tslte-icon {
+  transform: scale(0.8);
+}
+
+.test {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.responsive {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-progress-bar {
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  z-index: 10;
+}

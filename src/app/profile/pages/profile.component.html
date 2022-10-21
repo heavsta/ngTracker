@@ -1,0 +1,85 @@
+<div class="center">
+  <mat-card class="form-card">
+    <h2 class="mat-title">{{ "PROFILE.TITLE" | translate }}</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "FORM.LABEL.NAME" | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          id="name"
+          formControlName="name"
+          autocomplete="off"
+        />
+        <mat-error *ngIf="editForm.get('name')?.hasError('required')">
+          {{ "FORM.ERROR.REQUIRED" | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "FORM.LABEL.USERNAME" | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          id="login"
+          formControlName="login"
+          autocomplete="off"
+        />
+        <mat-error *ngIf="editForm.get('login')?.hasError('required')">
+          {{ "FORM.ERROR.REQUIRED" | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "FORM.LABEL.PASSWORD" | translate }}</mat-label>
+        <input
+          matInput
+          type="password"
+          id="password"
+          formControlName="password"
+        />
+        <mat-error *ngIf="editForm.get('password')?.hasError('required')">
+          {{ "FORM.ERROR.REQUIRED" | translate }}
+        </mat-error>
+        <mat-error *ngIf="editForm.get('password')?.hasError('pattern')">
+          {{ "FORM.ERROR.PASSWORD" | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "FORM.LABEL.CONFIRM" | translate }}</mat-label>
+        <input
+          matInput
+          type="password"
+          id="confirm"
+          formControlName="confirm"
+        />
+        <mat-error *ngIf="editForm.get('confirm')?.hasError('required')">
+          {{ "FORM.ERROR.REQUIRED" | translate }}
+        </mat-error>
+        <div
+          *ngIf="editForm.errors?.['notMatching'] && (editForm.get('confirm')?.touched && editForm.get('confirm')?.valid)"
+          class="mat-error mat-form-field-subscript-wrapper adapt"
+        >
+          {{ "FORM.ERROR.CONFIRM" | translate }}
+        </div>
+      </mat-form-field>
+      <div class="action">
+        <button
+          mat-raised-button
+          color="accent"
+          type="submit"
+          [disabled]="!editForm.valid"
+        >
+          {{ "PROFILE.SUBMIT" | translate }}
+        </button>
+      </div>
+    </form>
+    <button
+      mat-button
+      color="warn"
+      type="button"
+      class="delete-btn"
+      (click)="onDeleteAccount()"
+    >
+      {{ "PROFILE.DELETE" | translate }}
+    </button>
+  </mat-card>
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="header">
+    <div class="header-title">
+      <h1 class="mat-display-1">{{ "BOARDS.TITLE" | translate }}</h1>
+      <div class="add-btn">
+        <button
+          mat-raised-button
+          color="primary"
+          type="button"
+          (click)="onCreateBoard()"
+        >
+          <mat-icon
+            aria-hidden="false"
+            aria-label="User icon"
+            fontIcon="add"
+          ></mat-icon
+          >&nbsp;{{ "BOARDS.ADD_BUTTON" | translate }}
+        </button>
+      </div>
+    </div>
+    <mat-form-field class="search-input" appearance="outline">
+      <mat-label>{{ "BOARDS.SEARCH" | translate }}</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="{{ 'BOARDS.SEARCH_PLACEHOLDER' | translate }}"
+        [(ngModel)]="searchFilter"
+        autocomplete="off"
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="boards">
+    <div *ngFor="let brd of boards | filter: searchFilter">
+      <app-board-card
+        [board]="brd"
+        (boardDeleted)="onBoardDeleted($event)"
+      ></app-board-card>
+    </div>
+  </div>
+</div>

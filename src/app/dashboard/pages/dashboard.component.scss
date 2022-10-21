@@ -1,0 +1,96 @@
+@use "/src/keyframes.scss";
+
+:host {
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  max-width: 1150px;
+  margin: 70px 7px 0 7px;
+
+  &-title {
+    width: 446px;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .add-btn {
+    text-align: right;
+
+    button {
+      height: 50px;
+      font-size: 1rem;
+    }
+  }
+
+  mat-form-field {
+    font-size: 0.9rem;
+    margin-left: 14px;
+    flex-grow: 1;
+  }
+
+  @media (max-width: 1199px) {
+    max-width: 915px;
+  }
+
+  @media (max-width: 991px) {
+    max-width: 684px;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    margin-top: 40px;
+
+    .mat-display-1 {
+      margin-bottom: 30px;
+    }
+
+    &-title {
+      justify-content: unset;
+
+      h1 {
+        font-size: 2em;
+      }
+    }
+
+    .add-btn {
+      margin-left: 25px;
+
+      button {
+        font-size: 1em;
+      }
+    }
+
+    mat-form-field {
+      margin-left: 0;
+    }
+  }
+}
+
+.boards {
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  animation: fadeIn 800ms ease-in-out;
+
+  @media (max-width: 728px) {
+    max-width: 470px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 495px) {
+    max-width: 325px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 390px) {
+  .container {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}

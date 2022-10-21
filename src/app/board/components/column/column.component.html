@@ -1,0 +1,88 @@
+<mat-card class="column-card">
+  <mat-card-title
+    *ngIf="!editMode"
+    (mouseover)="mouseover = true"
+    (mouseleave)="mouseover = false"
+  >
+    <span class="column-title" (click)="onActivateEditMode()">
+      {{ column.title }}
+    </span>
+    <div class="column-actions" *ngIf="mouseover">
+      <button
+        mat-flat-button
+        type="button"
+        color="primary"
+        (click)="onDeleteColumn()"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-title>
+  <mat-card-title *ngIf="editMode">
+    <form #editColForm="ngForm" (ngSubmit)="onEditColumn()">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "FORM.LABEL.TITLE" | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          id="title"
+          name="title"
+          autocomplete="off"
+          [ngModel]="column.title"
+          #title="ngModel"
+          required
+        />
+        <mat-error *ngIf="!title.valid">
+          {{ "FORM.ERROR.REQUIRED" | translate }}
+        </mat-error>
+      </mat-form-field>
+      <div class="column-actions">
+        <button
+          mat-flat-button
+          type="submit"
+          color="primary"
+          [disabled]="!editColForm.valid"
+        >
+          <mat-icon>done</mat-icon>
+        </button>
+        <button
+          mat-flat-button
+          type="button"
+          color="primary"
+          (click)="onDisableEditMode()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-card-title>
+  <mat-card-actions>
+    <button mat-flat-button (click)="onAddTask()">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="User icon"
+        fontIcon="add"
+      ></mat-icon
+      >&nbsp;{{ "COLUMN.ADD_BUTTON" | translate }}
+    </button>
+  </mat-card-actions>
+  <mat-card-content>
+    <div
+      class="tasks"
+      cdkDropList
+      [cdkDropListData]="tasks"
+      (cdkDropListDropped)="drop($event, this.column.id)"
+    >
+      <app-task-card
+        class="task-card"
+        *ngFor="let task of tasks"
+        [task]="task"
+        [colId]="column.id"
+        [boardId]="boardId"
+        [users]="users"
+        (deletedTask)="onTaskDeleted($event)"
+        cdkDrag
+      ></app-task-card>
+    </div>
+  </mat-card-content>
+</mat-card>

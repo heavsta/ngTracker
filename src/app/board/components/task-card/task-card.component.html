@@ -1,0 +1,23 @@
+<div
+  class="task-card"
+  (mouseover)="mouseover = true"
+  (mouseleave)="mouseover = false"
+>
+  <div class="task-card__info">
+    <h4>{{ task.title }}</h4>
+    <p *ngIf="userAssigned">
+      {{ userAssigned.name }}
+    </p>
+    <div *ngIf="task.files!.length > 0">
+      <mat-icon class="file-icon">attach_file</mat-icon>
+    </div>
+    <div class="task-card__info-actions" *ngIf="mouseover">
+      <button mat-button type="button" (click)="onEditTask()">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-button type="button" (click)="onDeleteTask()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

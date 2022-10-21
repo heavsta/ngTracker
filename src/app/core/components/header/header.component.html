@@ -1,0 +1,156 @@
+<mat-toolbar color="primary" class="mat-elevation-z5" fxLayout="row">
+  <!-- Responsive NavBar -->
+  <div class="responsive" fxHide fxShow.xs>
+    <button mat-icon-button [matMenuTriggerFor]="dropMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #dropMenu="matMenu">
+      <button mat-menu-item routerLink="/auth/login" *ngIf="!isAuthenticated">
+        {{ "HEADER.LOGIN" | translate }}
+      </button>
+      <button mat-menu-item routerLink="/auth/signup" *ngIf="!isAuthenticated">
+        {{ "HEADER.SIGNUP" | translate }}
+      </button>
+      <button mat-menu-item routerLink="/dashboard" *ngIf="isAuthenticated">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="User icon"
+          fontIcon="grid_view"
+        ></mat-icon>
+        {{ "HEADER.BOARDS" | translate }}
+      </button>
+      <button mat-menu-item *ngIf="isAuthenticated" (click)="onNewBoard()">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="User icon"
+          fontIcon="add_box"
+        ></mat-icon>
+        {{ "HEADER.NEW_BOARD" | translate }}
+      </button>
+      <button mat-menu-item routerLink="/profile/edit" *ngIf="isAuthenticated">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="User icon"
+          fontIcon="account_circle"
+        ></mat-icon>
+        {{ login }}
+      </button>
+      <button mat-menu-item (click)="onLogout()" *ngIf="isAuthenticated">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="User icon"
+          fontIcon="logout"
+        ></mat-icon>
+        {{ "HEADER.LOGOUT" | translate }}
+      </button>
+    </mat-menu>
+    <div>
+      <a routerLink="/" class="logo"
+        ><img src="/assets/images/logo.svg" alt="ng logo" /> ngTracker</a
+      >
+    </div>
+    <button mat-button [matMenuTriggerFor]="languageMenu">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="User icon"
+        fontIcon="translate"
+        class="tslte-icon"
+      ></mat-icon
+      >{{ translate.currentLang | uppercase }}
+    </button>
+    <mat-menu #languageMenu="matMenu">
+      <a
+        mat-menu-item
+        *ngFor="let lang of translate.getLangs()"
+        (click)="switchLang(lang)"
+        >{{ toLangName(lang) }}</a
+      >
+    </mat-menu>
+  </div>
+
+  <!-- Desktop NavBar -->
+  <div class="container" fxHide.xs>
+    <div class="left-side">
+      <div>
+        <a routerLink="/" class="logo"
+          ><img src="/assets/images/logo.svg" alt="ng logo" />&nbsp;ngTracker</a
+        >
+      </div>
+      <a
+        *ngIf="isAuthenticated"
+        mat-flat-button
+        color="primary"
+        routerLink="/dashboard"
+        fxHide.xs
+      >
+        {{ "HEADER.BOARDS" | translate }}
+      </a>
+    </div>
+    <div class="right-side">
+      <a mat-raised-button routerLink="/auth/login" *ngIf="!isAuthenticated">{{
+        "HEADER.LOGIN" | translate
+      }}</a>
+      <a
+        mat-flat-button
+        color="primary"
+        routerLink="/auth/signup"
+        *ngIf="!isAuthenticated"
+        >{{ "HEADER.SIGNUP" | translate }}</a
+      >
+      <button
+        mat-flat-button
+        color="primary"
+        *ngIf="isAuthenticated"
+        (click)="onNewBoard()"
+      >
+        <mat-icon
+          aria-hidden="false"
+          aria-label="User icon"
+          fontIcon="add_box"
+        ></mat-icon
+        >&nbsp;{{ "HEADER.NEW_BOARD" | translate }}
+      </button>
+      <button
+        mat-button
+        [matMenuTriggerFor]="accountMenu"
+        *ngIf="isAuthenticated"
+      >
+        <mat-icon
+          aria-hidden="false"
+          aria-label="User icon"
+          fontIcon="account_circle"
+        ></mat-icon
+        >&nbsp;{{ login }}
+      </button>
+      <mat-menu #accountMenu="matMenu">
+        <a mat-menu-item routerLink="/profile/edit">{{
+          "HEADER.USER_EDIT" | translate
+        }}</a>
+        <a mat-menu-item (click)="onLogout()">{{
+          "HEADER.LOGOUT" | translate
+        }}</a>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="languageMenu">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="User icon"
+          fontIcon="translate"
+          class="tslte-icon"
+        ></mat-icon
+        >&nbsp;{{ translate.currentLang | uppercase }}
+      </button>
+      <mat-menu #languageMenu="matMenu">
+        <a
+          mat-menu-item
+          *ngFor="let lang of translate.getLangs()"
+          (click)="switchLang(lang)"
+          >{{ toLangName(lang) }}</a
+        >
+      </mat-menu>
+    </div>
+  </div>
+  <mat-progress-bar
+    mode="query"
+    *ngIf="loadingService.isLoading | async"
+  ></mat-progress-bar>
+</mat-toolbar>

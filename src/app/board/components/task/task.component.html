@@ -1,0 +1,106 @@
+<div class="modal">
+  <mat-icon class="close" (click)="onNoClick()">close</mat-icon>
+  <div class="task" *ngIf="viewTask">
+    <h1 mat-dialog-title>{{ data.title }}</h1>
+    <div mat-dialog-content>
+      <div class="desc">
+        <h3 class="legend">{{ "TASK.DESCRIPTION" | translate }}</h3>
+        <p>{{ data.description }}</p>
+      </div>
+      <div class="user">
+        <h3 class="legend">{{ "TASK.ASSIGNED_USER" | translate }}</h3>
+        <div class="user-data">
+          <p>{{ selectedUser?.name }}</p>
+        </div>
+      </div>
+      <div class="files">
+        <div class="files-header">
+          <h3 class="legend">{{ "TASK.FILES" | translate }}</h3>
+          <input type="file" (change)="onFileSelected($event)" #file />
+          <button mat-button color="primary" (click)="file.click()">
+            {{ "TASK.FILE_UPLOAD" | translate }}
+            <mat-icon>upload_file</mat-icon>
+          </button>
+        </div>
+        <div *ngIf="files.length > 0">
+          <div *ngFor="let file of files" class="file-item">
+            <button
+              mat-button
+              type="button"
+              (click)="onDownloadFile(file.filename)"
+            >
+              <mat-icon>file_download</mat-icon>
+            </button>
+            {{ file.filename }} {{ formatBytes(file.fileSize!) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form" *ngIf="!viewTask">
+    <h1 mat-dialog-title>{{ formTitle }}</h1>
+    <div mat-dialog-content>
+      <form #addTaskForm="ngForm" (ngSubmit)="onSubmit(addTaskForm)">
+        <mat-form-field appearance="fill">
+          <mat-label>{{ "FORM.LABEL.TITLE" | translate }}</mat-label>
+          <input
+            matInput
+            type="text"
+            id="title"
+            name="title"
+            autocomplete="off"
+            [(ngModel)]="data.title"
+            #title="ngModel"
+            required
+          />
+          <mat-error *ngIf="!title.valid"> You must enter a value </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{ "FORM.LABEL.DESCRIPTION" | translate }}</mat-label>
+          <textarea
+            matInput
+            type="text"
+            id="login"
+            name="description"
+            autocomplete="off"
+            [(ngModel)]="data.description"
+            #description="ngModel"
+            required
+          ></textarea>
+          <mat-error *ngIf="!description.valid">
+            {{ "FORM.ERROR.REQUIRED" | translate }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{ "FORM.LABEL.USER" | translate }}</mat-label>
+          <mat-select
+            name="userId"
+            [(ngModel)]="data.userId"
+            #userId="ngModel"
+            required
+          >
+            <mat-option *ngFor="let user of data.users" [value]="user.id">
+              {{ user.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="!userId.valid">
+            {{ "FORM.ERROR.REQUIRED" | translate }}
+          </mat-error>
+        </mat-form-field>
+        <div mat-dialog-actions>
+          <button mat-raised-button (click)="onNoClick()">
+            {{ "FORM.ACTION.CANCEL" | translate }}
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="!addTaskForm.valid"
+            type="submit"
+          >
+            {{ submit }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

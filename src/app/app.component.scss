@@ -1,0 +1,20 @@
+.page-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.page-header {
+  height: 7%;
+}
+
+.page-content {
+  min-height: 93%;
+  height: 93%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  .footer {
+    margin-top: auto;
+  }
+}

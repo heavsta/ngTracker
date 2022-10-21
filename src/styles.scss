@@ -1,0 +1,76 @@
+@use "./colors.scss";
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background-color: #b4a9c9;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: colors.$primary-color;
+}
+body {
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  color: colors.$base-color;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.display-error {
+  color: #d75f56;
+}
+
+.display-success {
+  color: colors.$base-color;
+  background-color: #f6f6f6;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+mat-progress-bar .mat-progress-bar-fill::after {
+  background-color: rgb(175, 138, 175);
+}
+
+mat-progress-bar .mat-progress-bar-buffer {
+  background: #e4e8eb;
+}
+
+mat-progress-bar .mat-progress-bar {
+  border-radius: 2px;
+}

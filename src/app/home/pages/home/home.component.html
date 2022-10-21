@@ -1,0 +1,127 @@
+<article class="container">
+  <section class="app">
+    <div class="img">
+      <img src="/assets/images/pma.webp" alt="Screenshot of the application" />
+    </div>
+    <div class="app__info">
+      <h1>{{ "HOME.APP.TITLE" | translate }}</h1>
+      <div class="text">
+        <p>
+          {{ "HOME.APP.CATCH_1" | translate }}
+        </p>
+        <p>
+          {{ "HOME.APP.CATCH_2" | translate }}
+        </p>
+      </div>
+      <button
+        type="button"
+        mat-raised-button
+        color="accent"
+        *ngIf="!isAuthenticated"
+        routerLink="/auth/signup"
+      >
+        {{ "HOME.APP.ACCOUNT_BUTTON" | translate }}
+      </button>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="item">
+      <div class="icon">
+        <img src="/assets/images/light-bulb.svg" alt="light bulb" />
+      </div>
+      <div class="item__info">
+        <h3 class="mat-title">{{ "HOME.FEATURES.ONE.TITLE" | translate }}</h3>
+        <p>
+          {{ "HOME.FEATURES.ONE.TEXT" | translate }}
+        </p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="icon">
+        <img src="/assets/images/anya.svg" alt="serious girl" />
+      </div>
+      <div class="item__info">
+        <h3 class="mat-title">{{ "HOME.FEATURES.TWO.TITLE" | translate }}</h3>
+        <p>
+          {{ "HOME.FEATURES.TWO.TEXT" | translate }}
+        </p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="icon">
+        <img src="/assets/images/clock.svg" alt="clock on fire" />
+      </div>
+      <div class="item__info">
+        <h3 class="mat-title">{{ "HOME.FEATURES.THREE.TITLE" | translate }}</h3>
+        <p>
+          {{ "HOME.FEATURES.THREE.TEXT" | translate }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="developer">
+    <h2 class="mat-display-1">{{ "HOME.DEV.TITLE" | translate }}</h2>
+    <div class="dev">
+      <div class="dev__heading">
+        <img
+          src="https://avatars.githubusercontent.com/u/64216992?v=4"
+          alt="François Leduc"
+        />
+        <div class="title">
+          <h3 class="mat-title">François Leduc</h3>
+          <p>{{ "HOME.DEV.JOB" | translate }}</p>
+          <div class="location">
+            <mat-icon>location_on</mat-icon>
+            <p>{{ "HOME.DEV.LOCATION" | translate }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="dev__info">
+        <p>
+          {{ "HOME.DEV.PHRASE_1" | translate }}<br />
+          {{ "HOME.DEV.PHRASE_2" | translate }}
+        </p>
+        <p>
+          {{ "HOME.DEV.PHRASE_3" | translate }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rs-school">
+    <div class="logo">
+      <img
+        src="https://rs.school/images/rs_school_js.svg"
+        alt="RS School logo"
+      />
+    </div>
+    <div class="advantages">
+      <div class="item">
+        <h3>{{ "HOME.RS.ONE.TITLE" | translate }}</h3>
+        <p>
+          {{ "HOME.RS.ONE.TEXT" | translate }}
+        </p>
+      </div>
+      <div class="item">
+        <h3>{{ "HOME.RS.TWO.TITLE" | translate }}</h3>
+        <p>
+          {{ "HOME.RS.TWO.TEXT" | translate }}
+        </p>
+      </div>
+      <div class="item">
+        <h3>{{ "HOME.RS.THREE.TITLE" | translate }}</h3>
+        <p>
+          {{ "HOME.RS.THREE.TEXT" | translate }}
+        </p>
+      </div>
+      <div class="item">
+        <h3>{{ "HOME.RS.FOUR.TITLE" | translate }}</h3>
+        <p>
+          {{ "HOME.RS.FOUR.TEXT" | translate }}
+        </p>
+      </div>
+    </div>
+  </section>
+</article>

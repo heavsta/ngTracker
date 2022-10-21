@@ -1,0 +1,174 @@
+{
+  "HEADER": {
+    "LOGIN": "Login",
+    "SIGNUP": "Sign up",
+    "NEW_BOARD": "New board",
+    "USER_EDIT": "Edit profile",
+    "LOGOUT": "Logout",
+    "BOARDS": "All boards"
+  },
+  "HOME": {
+    "APP": {
+      "TITLE": "ngTracker - The application that revamps your workflow",
+      "CATCH_1": "Replace pen and paper or out-of-date software to cutting-edge management system. Set up workflows with full flexibility so that they meet your business or personal needs.",
+      "CATCH_2": "Break the big ideas down into manageable chunks across teams with user assignment and file sharing.",
+      "ACCOUNT_BUTTON": "Create an account"
+    },
+    "FEATURES": {
+      "ONE": {
+        "TITLE": "Build your road map",
+        "TEXT": "Create an unlimited ammount of boards, lists and cards to manage your projets and organize your tasks"
+      },
+      "TWO": {
+        "TITLE": "Link users to tasks",
+        "TEXT": "Make sure that each of your team members never passes over a single task"
+      },
+      "THREE": {
+        "TITLE": "Never miss deadlines",
+        "TEXT": "Order your tasks by their importance in a couple seconds through our effortless drag-and-drop system"
+      }
+    },
+    "DEV": {
+      "TITLE": "Behind the scenes",
+      "JOB": "Front-end developer",
+      "LOCATION": "Wrocław, Poland",
+      "PHRASE_1": "JavaScript developer specialized in Angular.",
+      "PHRASE_2": "Personal experience in back-end with Flask & Django. Will to dig further in both front and back-end.",
+      "PHRASE_3": "Currently looking forward to join an IT company as a front-end specialist where I could blossom at my job, actively participating, sharing, and solving issues."
+    },
+    "RS": {
+      "ONE": {
+        "TITLE": "FREE-OF-CHARGE LEARNING",
+        "TEXT": "The RS School is working by the principle of \"Pay it forward\". Members of our community share their knowledge and check students' tasks for free."
+      },
+      "TWO": {
+        "TITLE": "OPEN TO EVERYONE",
+        "TEXT": "Everyone can study at RS School, regardless of age, professional employment, or place of residence."
+      },
+      "THREE": {
+        "TITLE": "WORLDWIDE MENTORS AND TRAINERS",
+        "TEXT": "The Mentors and trainers of our school are front-end and javascript developers from different companies/countries."
+      },
+      "FOUR": {
+        "TITLE": "CERTIFICATE",
+        "TEXT": "After accomplishing all three stages of education, students will receive an electronic certificate of completion."
+      }
+    }
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "LOST": "Not registered yet? Then ",
+    "LOST_LINK": "Sign up",
+    "SUBMIT": "Login"
+  },
+  "SIGNUP": {
+    "TITLE": "Sign up",
+    "LOST": "Already have an account? Then ",
+    "LOST_LINK": "Login",
+    "SUBMIT": "Sign up",
+    "SUCCESS": "Account successfully created!"
+  },
+  "PROFILE": {
+    "TITLE": "Edit Profile",
+    "SUBMIT": "Save",
+    "DELETE": "Delete your account"
+  },
+  "BOARDS": {
+    "TITLE": "Boards",
+    "ADD_BUTTON": "Add new board",
+    "SEARCH": "Search",
+    "SEARCH_PLACEHOLDER": "Board name...",
+    "FORM": {
+      "TITLE": "New board",
+      "SUBMIT": "Create"
+    }
+  },
+  "BOARD_CARD": {
+    "EDIT_BUTTON": "Edit board",
+    "DELETE_BUTTON": "Delete board",
+    "FORM": {
+      "TITLE": "Edit board",
+      "SUBMIT": "Save"
+    }
+  },
+  "BOARD": {
+    "SIDENAV_BUTTON": "Back to Boards",
+    "INFO_BUTTON": "About board",
+    "EDIT_BUTTON": "Edit board",
+    "DELETE_BUTTON": "Delete board",
+    "ADD_BUTTON": "Add new column",
+    "FORM": {
+      "TITLE": "New column",
+      "SUBMIT": "Create"
+    }
+  },
+  "COLUMN": {
+    "ADD_BUTTON": "Add new task",
+    "FORM": {
+      "TITLE": "New task",
+      "SUBMIT": "Create"
+    }
+  },
+  "TASK_CARD": {
+    "FORM": {
+      "TITLE": "Edit task",
+      "SUBMIT": "Save"
+    }
+  },
+  "TASK": {
+    "DESCRIPTION": "Description",
+    "ASSIGNED_USER": "Assigned user",
+    "FILES": "Files",
+    "FILE_UPLOAD": "Upload File"
+  },
+  "FOOTER": {
+    "MONTH": "September",
+    "ABOUT": "About us"
+  },
+  "FORM": {
+    "LABEL": {
+      "NAME": "Name",
+      "USERNAME": "Username",
+      "PASSWORD": "Password",
+      "CONFIRM": "Confirm password",
+      "TITLE": "Title",
+      "DESCRIPTION": "Description",
+      "USER": "Assigned user to task"
+    },
+    "ERROR": {
+      "REQUIRED": "You must enter a value.",
+      "PASSWORD": "Your Password must include 8 characters, 1 lowercase, 1 uppercase, 1 number and 1 special character.",
+      "CONFIRM": "Passwords must match."
+    },
+    "ACTION": {
+      "CANCEL": "Dismiss",
+      "DELETE": "Delete"
+    }
+  },
+  "CONFIRM": {
+    "TITLE": "Confirm action",
+    "MESSAGE": "Are you sure that you want to delete this {{ value }}?",
+    "VALUES": {
+      "ACCOUNT": "account",
+      "BOARD": "board",
+      "COLUMN": "column",
+      "TASK": "task"
+    }
+  },
+  "404": {
+    "OOPS": "Oops! Page not found",
+    "EXPLAIN": "We are sorry, but the page you requested was not found"
+  },
+  "HTTP": {
+    "ERROR": {
+      "CLIENT_SIDE": "Something went wrong. Check your network connection.",
+      "UNKNOWN": "An error occurred. Please try again.",
+      "CREDENTIALS": "Invalid Credentials.",
+      "USERNAME_TAKEN": "Username already taken.",
+      "EXPIRED_TOKEN": "Please login again.",
+      "FILE_TYPE": "Only image files are allowed.",
+      "FILE_NOT_FOUND": "File not found.",
+      "RIGHTS": "You are not allowed to do that."
+    }
+  }
+}

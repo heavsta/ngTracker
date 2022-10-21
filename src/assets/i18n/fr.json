@@ -1,0 +1,174 @@
+{
+  "HEADER": {
+    "LOGIN": "Connexion",
+    "SIGNUP": "Créer un compte",
+    "NEW_BOARD": "Nouveau projet",
+    "USER_EDIT": "Modifier le profil",
+    "LOGOUT": "Déconnexion",
+    "BOARDS": "Tous les projets"
+  },
+  "HOME": {
+    "APP": {
+      "TITLE": "ngTracker - L'application qui révolutionne votre workflow",
+      "CATCH_1": "Remplacez votre papier et crayon ou votre logiciel obsolète par un système de management à la pointe de la technologie. Configurez au maximum vos plans d'action afin qu'ils répondent à vos besoins professionels ou personels.",
+      "CATCH_2": "Décomposez vos projets en multiples tâches au sein de vos équipes et gérez-les individuellement en assignant un utilisateur à un ticket.",
+      "ACCOUNT_BUTTON": "Créer un compte"
+    },
+    "FEATURES": {
+      "ONE": {
+        "TITLE": "Construisez votre feuille de route",
+        "TEXT": "Créez un nombre illimité de projets, listes et tickets pour mieux atteindre vos objectifs et organiser vos tâches"
+      },
+      "TWO": {
+        "TITLE": "Assignez les utilisateurs aux tâches",
+        "TEXT": "Assurez-vous que chacun des membres de votre équipe puisse accomplir chacune de ses tâches."
+      },
+      "THREE": {
+        "TITLE": "Ne dépassez jamais la date butoir",
+        "TEXT": "Triez vos tâches par leur importance en quelques secondes grâce à notre système de glisser-déposer"
+      }
+    },
+    "DEV": {
+      "TITLE": "Le développeur",
+      "JOB": "Développeur front-end",
+      "LOCATION": "Wrocław, Pologne",
+      "PHRASE_1": "Développeur JavaScript spécialisé en Angular.",
+      "PHRASE_2": "Expérience personnelle en back-end avec Flask & Django. Envie d'aller plus loin à la fois dans le front et back-end.",
+      "PHRASE_3": "Actuellement à la recherche d'un poste en tant que développeur front-end au sein d'une entreprise informatique où je pourrai m'épanouir dans mon travail, en participant activement, en partageant mes connaissances et en résolvant des problèmes."
+    },
+    "RS": {
+      "ONE": {
+        "TITLE": "APPRENTISSAGE GRATUIT",
+        "TEXT": "La RS School fonctionne selon le principe de \"Donner au suivant\". Les membres de notre communauté partagent leurs connaissances et vérifient gratuitement les tâches des étudiants."
+      },
+      "TWO": {
+        "TITLE": "OUVERT À TOUS",
+        "TEXT": "Tout le monde peut étudier à la RS School, quel que soit votre âge, votre activité professionnelle ou votre lieu de résidence."
+      },
+      "THREE": {
+        "TITLE": "DES FORMATEURS DU MONDE ENTIER",
+        "TEXT": "Les mentors et formateurs de notre école sont des développeurs front-end et javascript de différent(e)s entreprises/pays."
+      },
+      "FOUR": {
+        "TITLE": "CERTIFICAT",
+        "TEXT": "Après avoir accompli les trois phases du parcours, les étudiants recevront un certificat électronique d'achèvement."
+      }
+    }
+  },
+  "LOGIN": {
+    "TITLE": "Connexion",
+    "LOST": "Pas de compte? ",
+    "LOST_LINK": "Créer un compte",
+    "SUBMIT": "Connexion"
+  },
+  "SIGNUP": {
+    "TITLE": "Créer un compte",
+    "LOST": "Vous possédez déjà un compte? ",
+    "LOST_LINK": "Connectez-vous",
+    "SUBMIT": "Créer un compte",
+    "SUCCESS": "Compte créé avec succès!"
+  },
+  "PROFILE": {
+    "TITLE": "Modifiez votre profil",
+    "SUBMIT": "Sauvegarder",
+    "DELETE": "Supprimer le compte"
+  },
+  "BOARDS": {
+    "TITLE": "Projets",
+    "ADD_BUTTON": "Ajouter un projet",
+    "SEARCH": "Rechercher",
+    "SEARCH_PLACEHOLDER": "Nom du projet...",
+    "FORM": {
+      "TITLE": "Nouveau projet",
+      "SUBMIT": "Créer"
+    }
+  },
+  "BOARD_CARD": {
+    "EDIT_BUTTON": "Modifier le projet",
+    "DELETE_BUTTON": "Supprimer le projet",
+    "FORM": {
+      "TITLE": "Modifier le projet",
+      "SUBMIT": "Modifier"
+    }
+  },
+  "BOARD": {
+    "SIDENAV_BUTTON": "Retour aux Projets",
+    "INFO_BUTTON": "À propos du projet",
+    "EDIT_BUTTON": "Modifier le projet",
+    "DELETE_BUTTON": "Supprimer le projet",
+    "ADD_BUTTON": "Ajouter une colonne",
+    "FORM": {
+      "TITLE": "Nouvelle colonne",
+      "SUBMIT": "Créer"
+    }
+  },
+  "COLUMN": {
+    "ADD_BUTTON": "Ajouter un ticket",
+    "FORM": {
+      "TITLE": "Nouveau ticket",
+      "SUBMIT": "Créer"
+    }
+  },
+  "TASK_CARD": {
+    "FORM": {
+      "TITLE": "Modifier le ticket",
+      "SUBMIT": "Modifier"
+    }
+  },
+  "TASK": {
+    "DESCRIPTION": "Description",
+    "ASSIGNED_USER": "Utilisateur en charge: ",
+    "FILES": "Fichiers",
+    "FILE_UPLOAD": "Téléverser un fichier"
+  },
+  "FOOTER": {
+    "MONTH": "Septembre",
+    "ABOUT": "À propos"
+  },
+  "FORM": {
+    "LABEL": {
+      "NAME": "Nom",
+      "USERNAME": "Nom d'utilisateur",
+      "PASSWORD": "Mot de passe",
+      "CONFIRM": "Confirmer le mot de passe",
+      "TITLE": "Titre",
+      "DESCRIPTION": "Description",
+      "USER": "Utilisateur en charge du ticket"
+    },
+    "ERROR": {
+      "REQUIRED": "Veuillez entrer une valeur.",
+      "PASSWORD": "Votre mot de passe doit inclure 8 caractères, dont une lettre minuscule, 1 majuscule, 1 chiffre et 1 caractère spécial.",
+      "CONFIRM": "Les mots de passe doivent correspondre."
+    },
+    "ACTION": {
+      "CANCEL": "Annuler",
+      "DELETE": "Supprimer"
+    }
+  },
+  "CONFIRM": {
+    "TITLE": "Confirmer la suppression",
+    "MESSAGE": "Êtes-vous certain de vouloir supprimer {{ value }}?",
+    "VALUES": {
+      "ACCOUNT": "ce compte",
+      "BOARD": "ce projet",
+      "COLUMN": "cette colonne",
+      "TASK": "ce ticket"
+    }
+  },
+  "404": {
+    "OOPS": "Oops! Page introuvable",
+    "EXPLAIN": "Nous sommes désolés, mais la page que vous avez demandée est introuvable"
+  },
+  "HTTP": {
+    "ERROR": {
+      "CLIENT_SIDE": "Une erreur est survenue. Vérifiez votre connexion internet.",
+      "UNKNOWN": "Une erreur est survenue. Veuillez réitérer votre requête",
+      "CREDENTIALS": "Identifiants incorrects.",
+      "USERNAME_TAKEN": "Nom d'utilisateur déjà utilisé.",
+      "EXPIRED_TOKEN": "Veuillez vous reconnecter.",
+      "FILE_TYPE": "Seuls des fichiers images sont autorisés.",
+      "FILE_NOT_FOUND": "Fichier introuvable.",
+      "RIGHTS": "Vous n'êtes pas autorisé à faire cela."
+    }
+  }
+}

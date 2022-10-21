@@ -1,0 +1,126 @@
+@use "/src/colors.scss";
+
+.modal {
+  position: relative;
+  padding: 0 10px;
+
+  .close {
+    position: absolute;
+    top: -30px;
+    right: -5px;
+    cursor: pointer;
+    color: #626262;
+  }
+
+  .task {
+    .mat-dialog-title {
+      font-family: "Inter", sans-serif;
+      font-size: 1.75em;
+      font-weight: 600;
+      line-height: 29px;
+      color: colors.$base-color;
+      margin-bottom: 30px;
+      max-width: 235px;
+    }
+
+    .desc {
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 30px;
+
+      p {
+        font-size: 1.1em;
+        line-height: 19px;
+      }
+    }
+
+    .user {
+      width: 90%;
+      margin: 0 auto 30px auto;
+      display: flex;
+      align-items: baseline;
+
+      &-data {
+        color: colors.$base-color;
+        margin-left: 15px;
+      }
+
+      mat-icon {
+        transform: scale(1.5);
+        margin-right: 8px;
+      }
+
+      p {
+        font-size: 1.25em;
+      }
+    }
+
+    .files {
+      width: 90%;
+      margin: 0 auto;
+
+      &-header {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 10px;
+
+        button.mat-button {
+          margin-left: 25px;
+          line-height: unset;
+          padding: 5px 8px;
+
+          mat-icon {
+            transform: scale(0.9);
+            padding-bottom: 5px;
+          }
+        }
+      }
+
+      input {
+        display: none;
+      }
+
+      .file-item {
+        margin: 5px 0;
+
+        .mat-button {
+          min-width: unset;
+          padding: 0;
+
+          mat-icon {
+            transform: scale(0.8);
+          }
+        }
+      }
+    }
+
+    .legend {
+      font-family: "Inter", sans-serif;
+      color: #9e9e9e;
+      font-size: 0.9em;
+      font-weight: 500;
+      line-height: 17px;
+      margin-bottom: 8px;
+    }
+  }
+
+  textarea {
+    min-height: 60px;
+  }
+}
+
+.mat-dialog-title {
+  margin-top: 30px;
+  padding-left: 5%;
+}
+
+.mat-dialog-content {
+  height: 80%;
+  max-height: unset;
+}
+
+.mat-form-field,
+.mat-dialog-actions {
+  width: 90%;
+  margin: 0 auto;
+}

@@ -1,0 +1,94 @@
+<div class="center">
+  <mat-card class="form-card">
+    <h2 class="mat-title">{{ "SIGNUP.TITLE" | translate }}</h2>
+    <p>
+      {{ "SIGNUP.LOST" | translate
+      }}<a routerLink="/auth/login">{{ "SIGNUP.LOST_LINK" | translate }}</a
+      >!
+    </p>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "FORM.LABEL.NAME" | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          id="name"
+          formControlName="name"
+          autocomplete="off"
+        />
+        <mat-error *ngIf="signupForm.get('name')?.hasError('required')">
+          {{ "FORM.ERROR.REQUIRED" | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "FORM.LABEL.USERNAME" | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          id="login"
+          formControlName="login"
+          autocomplete="off"
+        />
+        <mat-error *ngIf="signupForm.get('login')?.hasError('required')">
+          {{ "FORM.ERROR.REQUIRED" | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "FORM.LABEL.PASSWORD" | translate }}</mat-label>
+        <input
+          matInput
+          [type]="hidePwd ? 'password' : 'text'"
+          id="password"
+          formControlName="password"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hidePwd = !hidePwd"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hidePwd"
+        >
+          <mat-icon>{{ hidePwd ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-error *ngIf="signupForm.get('password')?.hasError('required')">
+          {{ "FORM.ERROR.REQUIRED" | translate }}
+        </mat-error>
+        <mat-error *ngIf="signupForm.get('password')?.hasError('pattern')">
+          {{ "FORM.ERROR.PASSWORD" | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "FORM.LABEL.CONFIRM" | translate }}</mat-label>
+        <input
+          matInput
+          [type]="hideCfrm ? 'password' : 'text'"
+          id="confirm"
+          formControlName="confirm"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hideCfrm = !hideCfrm"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hideCfrm"
+        >
+          <mat-icon>{{ hideCfrm ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-error *ngIf="signupForm.get('confirm')?.hasError('required')">
+          {{ "FORM.ERROR.REQUIRED" | translate }}
+        </mat-error>
+        <div
+          *ngIf="signupForm.errors?.['notMatching'] && (signupForm.get('confirm')?.touched && signupForm.get('confirm')?.valid)"
+          class="mat-error mat-form-field-subscript-wrapper adapt"
+        >
+          {{ "FORM.ERROR.CONFIRM" | translate }}
+        </div>
+      </mat-form-field>
+      <button mat-raised-button type="submit" [disabled]="!signupForm.valid">
+        {{ "SIGNUP.SUBMIT" | translate }}
+      </button>
+    </form>
+  </mat-card>
+</div>

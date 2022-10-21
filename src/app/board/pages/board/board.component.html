@@ -1,0 +1,107 @@
+<div class="board-container">
+  <mat-drawer-container class="sidenav-container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side" opened>
+      <button
+        type="button"
+        mat-flat-button
+        color="accent"
+        (click)="drawer.toggle()"
+        class="collapse-btn"
+      >
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <div class="sidenav-btn">
+        <a mat-flat-button type="button" routerLink="/dashboard">
+          <mat-icon>chevron_left</mat-icon>
+          {{ "BOARD.SIDENAV_BUTTON" | translate }}
+        </a>
+      </div>
+      <div class="sidenav-list">
+        <div
+          *ngFor="let board of boards"
+          class="sidenav-board"
+          [ngClass]="board.id === boardId ? 'active' : ''"
+          (click)="onSidenavBoardClick(board.id)"
+        >
+          <span>{{ board.title }}</span>
+        </div>
+      </div>
+    </mat-drawer>
+    <div class="board">
+      <button
+        type="button"
+        mat-flat-button
+        color="accent"
+        (click)="drawer.toggle()"
+        class="collapse-btn"
+        *ngIf="!drawer.opened"
+      >
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+      <div class="header">
+        <div class="board-detail">
+          <h1>
+            {{ board?.title }}
+            <button
+              mat-icon-button
+              [matMenuTriggerFor]="menu"
+              aria-label="Board Card Menu"
+              class="menu"
+            >
+              <mat-icon class="icon-display">more_horiz</mat-icon>
+            </button>
+          </h1>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="onAboutBoard()">
+              <mat-icon>info</mat-icon>
+              <span>{{ "BOARD.INFO_BUTTON" | translate }}</span>
+            </button>
+            <button mat-menu-item (click)="onEditBoard()">
+              <mat-icon>edit</mat-icon>
+              <span>{{ "BOARD.EDIT_BUTTON" | translate }}</span>
+            </button>
+            <button mat-menu-item (click)="onDeleteBoard()">
+              <mat-icon>delete</mat-icon>
+              <span>{{ "BOARD.DELETE_BUTTON" | translate }}</span>
+            </button>
+          </mat-menu>
+        </div>
+        <button
+          mat-raised-button
+          color="accent"
+          type="button"
+          (click)="onAddColumn()"
+          class="add-btn"
+        >
+          <mat-icon
+            aria-hidden="false"
+            aria-label="User icon"
+            fontIcon="add"
+            class="plus-icon"
+            >add</mat-icon
+          >&nbsp;{{ "BOARD.ADD_BUTTON" | translate }}
+        </button>
+      </div>
+      <div
+        cdkDropList
+        [cdkDropListData]="columns"
+        (cdkDropListDropped)="drop($event)"
+        cdkDropListOrientation="horizontal"
+        class="col-list"
+      >
+        <div cdkDropListGroup class="columns">
+          <div class="col" *ngFor="let clmn of columns" cdkDrag>
+            <app-column
+              [column]="clmn"
+              [users]="users"
+              [boardId]="boardId"
+              [users]="users"
+              (columnDeleted)="onColumnDeleted($event)"
+              class="test"
+            ></app-column>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-container>
+</div>

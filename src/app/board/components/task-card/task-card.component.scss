@@ -1,0 +1,54 @@
+.task-card {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  background-color: #f1f1f1;
+  box-shadow: -6px 2px 19px rgba(170, 169, 169, 0.15);
+  border-radius: 15px;
+  margin: 0 0 15px 0;
+  display: flex;
+  transition: all 250ms ease-in;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    background: #f0e9fd;
+  }
+
+  &__info {
+    padding: 8px 10px;
+
+    h4 {
+      color: #2f6bb1;
+      font-weight: 500;
+      line-height: 17px;
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      color: #9e9e9e;
+      margin-bottom: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .file-icon {
+      position: absolute;
+      bottom: 10px;
+      left: 5px;
+      transform: scale(0.85);
+      color: #6d6d6d;
+    }
+
+    &-actions {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      button.mat-button {
+        min-width: 20px;
+        padding: 5px;
+        color: #b4b4b4;
+      }
+    }
+  }
+}

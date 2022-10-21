@@ -1,0 +1,51 @@
+<div class="center">
+  <mat-card class="form-card">
+    <h2 class="mat-title">{{ "LOGIN.TITLE" | translate }}</h2>
+    <p>
+      {{ "LOGIN.LOST" | translate
+      }}<a routerLink="/auth/signup">{{ "LOGIN.LOST_LINK" | translate }}</a
+      >!
+    </p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "FORM.LABEL.USERNAME" | translate }}</mat-label>
+        <input
+          matInput
+          type="text"
+          id="login"
+          formControlName="login"
+          autocomplete="off"
+        />
+        <mat-error *ngIf="loginForm.get('login')?.invalid">{{
+          "FORM.ERROR.REQUIRED" | translate
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "FORM.LABEL.PASSWORD" | translate }}</mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          id="password"
+          formControlName="password"
+          autocomplete="off"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-error *ngIf="loginForm.get('password')?.invalid">{{
+          "FORM.ERROR.REQUIRED" | translate
+        }}</mat-error>
+      </mat-form-field>
+      <button mat-raised-button type="submit" [disabled]="!loginForm.valid">
+        {{ "LOGIN.SUBMIT" | translate }}
+      </button>
+    </form>
+  </mat-card>
+</div>
